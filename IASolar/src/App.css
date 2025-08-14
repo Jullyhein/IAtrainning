@@ -1,0 +1,127 @@
+/* Container da página (pode manter o max-width) */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  /* text-align: center;  REMOVIDO para não centralizar tudo */
+}
+
+/* Linha principal: esquerda (textos) | direita (robô) */
+.hero {
+  display: flex;
+  align-items: center;        /* vertical */
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Coluna esquerda: garante alinhamento à esquerda e empilha conteúdo */
+.hero-left {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    /* tudo à esquerda */
+}
+
+/* Coluna direita: robô alinhado à direita */
+.hero-right {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Robô menor */
+.robot {
+  width: 320px;               /* ajuste o tamanho que preferir */
+  max-width: 40vw;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Linha com "Pergunte" + "frequência" lado a lado */
+.title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Ajustes dos títulos/imagens */
+.title-img {
+  height: 50px;               /* controla o “Pergunte” */
+  width: auto;
+  display: block;
+}
+
+.title-side-img {
+  height: 30px;               /* frequência menor */
+  width: auto;
+  margin-top: 8px;            /* ajuste fino de alinhamento */
+}
+
+.title-below-img {
+  width: min(450px, 85%);
+  height: auto;
+  display: block;
+  margin: 8px 0 16px;
+}
+
+.subtitle-img {
+  width: min(520px, 90%);
+  height: auto;
+  display: block;
+  margin: 0 0 24px;
+}
+
+/* Botão fica abaixo, alinhado à esquerda por estar dentro de .hero-left */
+.cta {
+  background: #f2b52a;
+  color: #222;
+  font-weight: 700;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+/* --- LOGO NO CANTO ESQUERDO SUPERIOR --- */
+.brand-mark {
+  position: fixed;     /* fica preso no canto da tela */
+  top: 12px;
+  left: 12px;
+  width: 120px;        /* ajuste o tamanho à vontade */
+  height: auto;
+  z-index: 1000;       /* acima do conteúdo */
+  pointer-events: none;/* não intercepta cliques */
+}
+
+/* --- CONTAINER DO ROBÔ PARA OVERLAY --- */
+.robot-wrap {
+  position: relative;  /* referência para o globo absoluto */
+  display: inline-block;
+}
+
+/* robô (já tinha, só garantindo) */
+.robot {
+  width: 320px;
+  max-width: 40vw;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* --- GLOBO SOBRE A MÃO DO ROBÔ --- */
+.robot-globe {
+  position: absolute;
+  /* POSIÇÃO EXEMPLO — ajuste fino conforme sua imagem do robô */
+  bottom: 37%;   /* sobe/abaixa */
+  width: 90px;   /* tamanho do globo */
+  height: auto;
+  pointer-events: none; /* não captura cliques */
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
+}
+
+/* responsivo: diminui o globo junto com o robô */
+@media (max-width: 900px) {
+  .robot { width: 260px; }
+  .robot-globe { width: 70px; bottom: 20%; left: 10%; }
+}

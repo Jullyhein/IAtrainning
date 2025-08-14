@@ -1,0 +1,20 @@
+{
+  "name": "iasolar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jullyhein/IAtrainning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jullyhein/IAtrainning/issues"
+  },
+  "homepage": "https://github.com/Jullyhein/IAtrainning#readme"
+}
